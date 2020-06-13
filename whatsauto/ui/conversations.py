@@ -1,4 +1,4 @@
-from .base import BaseClient
+from .base import BaseUi
 from dataclasses import dataclass
 from collections import namedtuple
 
@@ -28,6 +28,6 @@ class Sticker(BaseMessage):
     creator: str
 
 
-class ConversationUi(BaseClient):
+class ConversationUi(BaseUi):
     def search(self, message):
         pass
