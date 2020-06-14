@@ -8,6 +8,11 @@ class Contact:
     mute: bool
     groups_in_common: list
 
+    def __str__(self):
+        if self.name:
+            return self.name
+        return self.number
+
 
 class ContactMethods(BaseClient):
     pass
