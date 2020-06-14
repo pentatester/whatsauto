@@ -1,4 +1,4 @@
-from .base import BaseUi
+from .base import BaseClient
 from collections import namedtuple
 from dataclasses import dataclass
 
@@ -21,7 +21,7 @@ class Call(BaseCall):
     retry: int
 
 
-class CallUi(BaseUi):
+class CallMethods(BaseClient):
     def remove(self, call: Call):
         pass
 

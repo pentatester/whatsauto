@@ -1,4 +1,4 @@
-from .base import BaseUi
+from .base import BaseClient
 from dataclasses import dataclass
 from collections import namedtuple
 
@@ -12,7 +12,8 @@ class BaseMessage:
     reply: Reply
 
 
-class StatusMessage:
+@dataclass
+class StatusMessage(BaseMessage):
     text: str
 
 
@@ -28,6 +29,6 @@ class Sticker(BaseMessage):
     creator: str
 
 
-class ConversationUi(BaseUi):
+class ConversationMethods(BaseClient):
     def search(self, message):
         pass

@@ -1,4 +1,4 @@
-from .base import BaseUi
+from .base import BaseClient
 from dataclasses import dataclass
 
 
@@ -9,5 +9,5 @@ class Contact:
     groups_in_common: list
 
 
-class ContactUi(BaseUi):
+class ContactMethods(BaseClient):
     pass

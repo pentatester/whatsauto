@@ -1,4 +1,4 @@
-from .base import BaseUi
+from .base import BaseClient
 from dataclasses import dataclass
 
 
@@ -8,7 +8,8 @@ class Chat:
     message: str
     time: str
     counter: int
+    group: bool
 
 
-class ChatUi(BaseUi):
+class ChatMethods(BaseClient):
     pass
