@@ -4,6 +4,25 @@ from collections import namedtuple
 
 Reply = namedtuple('Reply', ['message', 'sticker'])
 
+_MESSAGE_LIST = "android:id/list"
+_TEXT_INPUT = "com.whatsapp:id/entry"
+_CONTACT_NAME = "com.whatsapp:id/conversation_contact_name"
+_CONTACT_STATUS = "com.whatsapp:id/conversation_contact_status"  # text = online / time
+_BACK_BUTTON = "com.whatsapp:id/back"
+
+_EMOJI_BUTTON = "com.whatsapp:id/emoji_picker_btn"
+_CAMERA_BUTTON = "com.whatsapp:id/camera_btn"
+
+_ATTACH_BUTTON = "com.whatsapp:id/input_attach_button"
+# | |
+# V V
+_PICK_DOCUMENT = "com.whatsapp:id/pickfiletype_document_holder"
+_PICK_CAMERA = "com.whatsapp:id/pickfiletype_camera_holder"
+_PICK_GALLERY = "com.whatsapp:id/pickfiletype_gallery_holder"
+_PICK_AUDIO = "com.whatsapp:id/pickfiletype_audio_holder"
+_PICK_LOCATION = "com.whatsapp:id/pickfiletype_location_holder"
+_PICK_CONTACT = "com.whatsapp:id/pickfiletype_contact_holder"
+
 
 @dataclass
 class BaseMessage:
@@ -32,7 +51,7 @@ class Sticker(BaseMessage):
 class ConversationMethods(BaseClient):
     @property
     def in_conversation(self):
-        return self.device(resourceId="com.whatsapp:id/conversation_contact").exists and self.device.xpath('//*[@resource-id="com.whatsapp:id/back"]/android.widget.FrameLayout[1]').exists
+        return self.device(resourceId=_CONTACT_NAME).exists and self.device.xpath(_CONTACT_STATUS).exists
 
     def search(self, message):
         pass
@@ -42,3 +61,10 @@ class ConversationMethods(BaseClient):
             pass
         if self.device(resourceId="android:id/list").exists:
             pass
+
+    def send_text(self, message):
+        if self.device(resourceId=_TEXT_INPUT).exists:
+            self.device.send_keys(message, clear=True)
+            self.device.send_action("send")
+            return True
+        return False
