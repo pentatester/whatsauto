@@ -1,5 +1,9 @@
 # WhatsAuto
 
+[![whatsauto - PyPi](https://img.shields.io/pypi/v/whatsauto)](https://pypi.org/project/whatsauto/)
+[![LICENSE](https://img.shields.io/github/license/hexatester/whatsauto)](https://github.com/hexatester/whatsauto/blob/master/LICENSE)
+[![GitHub Actions](https://github.com/hexatester/whatsauto/workflows/GitHub%20Actions/badge.svg)](https://github.com/hexatester/whatsauto/actions?query=workflow%3AGithub%3AActions)
+
 Python Whatsapp Driver
 
 ## Future Features
