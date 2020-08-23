@@ -6,10 +6,13 @@
 
 Python Whatsapp Driver
 
+## Status
+
+This project is under development, please be patient... :D
+
 ## Future Features
 
 - Bot?
-- Chat?
 - Auto Reply?
 - Conversation?
 
