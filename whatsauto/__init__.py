@@ -9,6 +9,8 @@ from .photo import Photo
 from .sticker import Sticker
 from .message import Message
 
+from .version import __version__
+
 __all__ = [
     'WhatsAutoObject',
     'User',
