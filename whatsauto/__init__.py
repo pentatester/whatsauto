@@ -9,7 +9,10 @@ from .photo import Photo
 from .sticker import Sticker
 from .message import Message
 
-from .version import __version__
+from .update import Update
+from .whatsapp import WhatsApp
+
+from .version import __version__  # NOQA
 
 __all__ = [
     'WhatsAutoObject',
@@ -21,4 +24,6 @@ __all__ = [
     'Photo',
     'Sticker',
     'Message',
+    'Update',
+    'WhatsApp',
 ]
