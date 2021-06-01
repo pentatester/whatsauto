@@ -143,5 +143,3 @@ cython_debug/
 # Private tests
 *-test.py
 
-# Lock file
-poetry.lock
